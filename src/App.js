@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
+import DispensaHolder from './Dispensa_Holder';
 
 function App() {
+const [user, setUser] = useState()
+const [token, setToken] = useState()
+
+useEffect(() =>{
+let lStorage = localStorage.getItem('user')
+let tStorage = localStorage.getItem('token')
+console.log(tStorage)
+// console.log(JSON.parse(lStorage))
+if(lStorage){
+  setUser(JSON.parse(lStorage))
+}
+if(tStorage){
+  setToken(tStorage)
+}
+
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <DispensaHolder user={user} setUser={setUser} token={token} setToken={setToken}/>
     </div>
   );
 }
+
+
+
+
 
 export default App;
