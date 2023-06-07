@@ -67,11 +67,11 @@ function SignupForm(props){
             <h2>Sign Up!</h2>
             {/* <form style={{display:'flex', flexDirection:'column', padding:'20px', maxWidth:'500px', minWidth:'300px'}}> */}
             <form className="iForms">
-                <span><input required className='input_box' type='input' name='username' placeholder="Username" value={formData.username} onChange={e => handleChange(e)}></input></span>
-                <span><input required className='input_box' type='input' name='password' placeholder="Password" value={formData.password} onChange={e => handleChange(e)}></input></span>
-                <span><input required className='input_box' type='input' name='first_name' placeholder="First Name" value={formData.first_name} onChange={e => handleChange(e)}></input></span>
-                <span><input required className='input_box' type='input' name='last_name' placeholder="Last Name" value={formData.last_name} onChange={e => handleChange(e)}></input></span>
-                <span><input required className='input_box' type='input' name='email' placeholder="Email" value={formData.email} onChange={e => handleChange(e)}></input></span>
+                <span><input required className='input_box' type='input' name='username' placeholder="Username" value={formData.username} onChange={e => handleChange(e)} data-testid='su1'></input></span>
+                <span><input required className='input_box' type='input' name='password' placeholder="Password" value={formData.password} onChange={e => handleChange(e)} data-testid='su2'></input></span>
+                <span><input required className='input_box' type='input' name='first_name' placeholder="First Name" value={formData.first_name} onChange={e => handleChange(e)} data-testid='su3'></input></span>
+                <span><input required className='input_box' type='input' name='last_name' placeholder="Last Name" value={formData.last_name} onChange={e => handleChange(e)} data-testid='su4'></input></span>
+                <span><input required className='input_box' type='input' name='email' placeholder="Email" value={formData.email} onChange={e => handleChange(e)} data-testid='su5'></input></span>
                 {/* <input className='input_box' type='input' name='pref_unit' placeholder="Preferred_unit" value={formData.pref_unit} onChange={e => handleChange(e)}></input> */}
                 <span>
                 <label style={{marginBottom:'10px'}} htmlFor='pref_unit'> Choose a Unit (Imperial or Standard)</label>
@@ -81,7 +81,7 @@ function SignupForm(props){
                 </select>
                 </span>
 
-                <span className="submit_button"><input type='submit' onClick={e => submitHandler(e)}></input></span>
+                <span className="submit_button"><input type='submit' onClick={e => submitHandler(e) } data-testid='su6'></input></span>
             </form>
         </div>
     )

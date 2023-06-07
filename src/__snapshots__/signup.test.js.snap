@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; justify-content: center; flex-direction: column; align-content: center; align-items: center;"
+  >
+    <h2>
+      Sign Up!
+    </h2>
+    <form
+      class="iForms"
+    >
+      <span>
+        <input
+          class="input_box"
+          data-testid="su1"
+          name="username"
+          placeholder="Username"
+          required=""
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <input
+          class="input_box"
+          data-testid="su2"
+          name="password"
+          placeholder="Password"
+          required=""
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <input
+          class="input_box"
+          data-testid="su3"
+          name="first_name"
+          placeholder="First Name"
+          required=""
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <input
+          class="input_box"
+          data-testid="su4"
+          name="last_name"
+          placeholder="Last Name"
+          required=""
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <input
+          class="input_box"
+          data-testid="su5"
+          name="email"
+          placeholder="Email"
+          required=""
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <label
+          for="pref_unit"
+          style="margin-bottom: 10px;"
+        >
+           Choose a Unit (Imperial or Standard)
+        </label>
+        <select
+          name="pref_unit"
+          required=""
+          style="margin-bottom: 20px;"
+        >
+          <option
+            value="US"
+          >
+            US (Imperial)
+          </option>
+          <option
+            value="SI"
+          >
+            SI (Standard)
+          </option>
+        </select>
+      </span>
+      <span
+        class="submit_button"
+      >
+        <input
+          data-testid="su6"
+          type="submit"
+        />
+      </span>
+    </form>
+  </div>
+</DocumentFragment>
+`;

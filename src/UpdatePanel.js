@@ -62,6 +62,27 @@ if(!ing){
     navigate('/pantry')
 }
 
+function handleDelClick(e, x){
+    e.preventDefault()
+console.log({DATA:[e, x]})
+
+try {
+  DispensaApi.removeIngredient(x.id).then((res) => {
+    console.log(res)
+    navigate('/pantry')
+    
+  })
+} catch (error) {
+    console.log(error)
+}
+
+
+}
+
+
+
+
+
     return(
         <>
        <div className="updatePanelHolder">
@@ -72,6 +93,7 @@ if(!ing){
                     <span><input type={'number'} name={'available_amount'}  value={formData.available_amount} placeholder={`Newly Available Amount for ${name} (Number Only)`} onChange={(e) => handleChange(e)} /></span>
                     <span><input type={'number'} name={'full_amount'} value={formData.full_amount} placeholder={`New Total Amount for ${name} (Number Only)`} onChange={(e) => handleChange(e)} /></span>
                     <span className="submit_button" onClick={(e) => handleClick(e)}><input type={'submit'} /></span>
+                    <span className="submit_button" onClick={(e) => handleDelClick(e, ing)}><button>Delete Ingredient</button></span>
                 </form>
             </div>
        </div>

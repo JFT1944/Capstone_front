@@ -1,4 +1,6 @@
+// const axios = require('axios')
 import axios from "axios"
+
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
@@ -7,7 +9,7 @@ console.log(localStorage)
 class DispensaApi{
 // token = ''
 
-
+    // generic request function
     static async request(endpoint, data = {}, method = "get") {
         console.debug("API Call:", endpoint, data, method);
     
@@ -36,6 +38,8 @@ class DispensaApi{
 // User Api Function
 // ####################################
 
+
+// signup function
 static async createUser(data){
 console.log({data:data})
 try {
@@ -50,11 +54,12 @@ try {
 
 }
 
-
+// login function
 static async login(username, password){
 
 console.log([username, password])
 try {
+    console.log({username:username, password:password})
     let res = await this.request(`auth/token`, {username:username, password:password}, 'post')
     console.log(res)
     return res
@@ -66,6 +71,7 @@ try {
 
 // Tie up the usernames.
 
+// get user informagtion function
 static async getUser(username){
     console.log('inside api helper and getusers')
 
@@ -77,6 +83,8 @@ static async getUser(username){
         console.log(err)
     }
 }
+
+// get all users
 
 static async getUsers(){
     console.log('inside api helper and getusers')
@@ -93,22 +101,13 @@ static async getUsers(){
     
 }
 
-updateUser(){
-
-}
-
-deleteUser(){
-
-}
-
-
-
 
 
 // ####################################
 // Ingredient Api Function
 // ####################################
 
+// get single ingredient using username and ingredient name
 static async getIngredient(username, ingredient){
 console.log({username:username, ingredients:ingredient})
     try {
@@ -121,6 +120,7 @@ console.log({username:username, ingredients:ingredient})
 
 }
 
+// get all ingredients using username
 static async getAllIngredients(username){
 console.log(username)
 try {
@@ -134,6 +134,7 @@ return res
 
 }
 
+// create ingredient using username and ingredient data
 static async createIngredient(data){
     console.log(data)
 try {
@@ -145,6 +146,7 @@ console.log(res)
 
 }
 
+// create all ingredients using username and ingredient data
 static async createAllIngredients(user, data){
 console.log(data)
 try {
@@ -157,10 +159,23 @@ try {
 }
 
 
-removeIngredient(){
+// delete ingredient using ingredient id
+static async removeIngredient(id){
+
+    console.log({id:id})
+    try {
+        let res = this.request(`ingredients/${id}`, {}, 'delete')
+        console.log(res)
+        return res
+
+
+    } catch (error) {
+        console.log(error)
+    }
 
 }
 
+// update ingredient using ingredient id and ingredient data
 static async updateIngredient(id, data){
     console.log({id:id})
     console.log({data:data})
@@ -173,6 +188,47 @@ static async updateIngredient(id, data){
     console.log(error)
    }
 }
+
+
+
+// ******************************************
+// Recipe Api
+// ******************************************
+
+// get all recipes using recipe id
+static async getAllRecipes(username){
+console.log(username)
+
+try {
+    let res = await this.request(`recipes/all/${username}`)
+    console.log(res)
+    return res
+} catch (error) {
+    console.log(error)
+}
+
+}
+
+// create recipe using username, recipe data, and recipe name
+static async createRecipe(username, recipe, name){
+    
+    console.log({Data:[username, recipe, name]})
+    console.log({Data:{name:name, ingredients:recipe, username:username}})
+    let res = await this.request('recipes', {name:name, ingredients:recipe, username:username}, 'post')
+    console.log(res)
+
+}
+
+// delete recipe using recipe id
+static async deleteRecipe(id){
+    console.log({Data:[id]})
+
+    let res = await this.request(`recipes/${id}`,{}, 'delete')
+    console.log(res)
+
+}
+
+
 
 }
 DispensaApi.token = ''

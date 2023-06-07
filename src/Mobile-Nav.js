@@ -28,6 +28,7 @@ function MobileNav(props){
                     <div style={{height:'150px'}}></div>
                     <NavLink className='navs' exact={true} to='/part-form'>Add Single Ingredient</NavLink>
                     <NavLink className='navs' exact={true} to='/full-form'>Add Recipe Ingredients</NavLink>
+                    <NavLink className='navs' exact={true} to='/recipes'>Recipes</NavLink>
                     <NavLink className='navs' exact={true} to='/pantry'>Pantry</NavLink>
                     <NavLink className='navs' exact={true} to='/shopping-list'>Shopping List</NavLink>
                     <NavLink className='navs' exact={true} to='/' onClick={(e) => LogOutSequence(e)}>Log Out</NavLink>

@@ -9,12 +9,14 @@ import DispensaApi from "./ApiHelper";
 function LoginForm(props){
 let {user, setUser, token, setToken} = props
 const navigate = useNavigate();
+// holds form information
 const [formData, getFormData] = useState({
     username: '', 
     password: ''
 })
 // let {tokenState, token, user, userState} = props
 // console.log(token)
+
 
 const handleChange = (evt) =>{
 
@@ -25,13 +27,14 @@ const handleChange = (evt) =>{
         [name]: value
     }))
 }
+// handles the submit of the form
 function clickHandler(e){
     e.preventDefault()
     if(!formData.username || !formData.password){
         alert('please input correct information')
         return
     }
-
+    // communicates with the backend to login
     DispensaApi.login(formData.username, formData.password).then((res) => {
         console.log(res)
        try {
@@ -72,7 +75,7 @@ function clickHandler(e){
             <form className={'iForms'} >
                 <span><input className='input_box' type='input' name='username' placeholder="Username" value={formData.username} onChange={(e) => handleChange(e)}></input></span>
                 <span><input className='input_box' type='input' name ='password' placeholder="Password" value={formData.password} onChange={(e) => handleChange(e)}></input></span>
-                <span className="submit_button"><input type='submit' onClick={(e) => clickHandler(e)}></input></span>
+                <span className="submit_button"><input type='submit' onClick={(e) => clickHandler(e)} data-testid='subBut'></input></span>
             </form>
         </div>
     )

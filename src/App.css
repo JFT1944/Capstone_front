@@ -173,6 +173,12 @@ margin: 10px 0;
   font-weight: bold;
   background: none;
 }
+.submit_button > button{
+  border: 2px solid #0F683A;
+  color: #0F683A;
+  font-weight: bold;
+  background: none;
+}
 .submit_button > input:hover{
 background-color: #0F683A;
 color: beige;
@@ -211,8 +217,50 @@ display: none;
   transform: scale(1.1);
   color: #AE2C35;
 }
+#signin_holder > a{
+  display: none;
 
-@media screen and (max-width: 1000px){
+}
+
+.r_add_button{
+background: none;
+color: #0F683A;
+border: #0F683A solid 2px;
+font-weight: bold;
+}
+.r_add_button:hover{
+  background-color: #0F683A;
+  color: beige;
+
+}
+.r_remove_button{
+  margin-top: 10px;
+  background: none;
+  color:#AE2C35;
+  font-weight: bold;
+  border:#AE2C35 solid 2px;
+}
+.r_remove_button:hover{
+  background-color: #AE2C35;
+  color: beige;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* *********** */
+/* Media Query Below */
+
+
+
+@media screen and (max-width: 1060px){
   .logoM{
     display: none;
   }
@@ -222,4 +270,10 @@ display: none;
   .mobile_button{
     display: block;
   }
+  #signin_holder > a{
+    display: block;
+  
+  }
+  
 }
+

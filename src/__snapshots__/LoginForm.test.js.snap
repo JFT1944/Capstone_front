@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; justify-content: center; flex-direction: column; align-content: center; align-items: center;"
+  >
+    <h2>
+      Login!
+    </h2>
+    <form
+      class="iForms"
+    >
+      <span>
+        <input
+          class="input_box"
+          name="username"
+          placeholder="Username"
+          type="input"
+          value=""
+        />
+      </span>
+      <span>
+        <input
+          class="input_box"
+          name="password"
+          placeholder="Password"
+          type="input"
+          value=""
+        />
+      </span>
+      <span
+        class="submit_button"
+      >
+        <input
+          data-testid="subBut"
+          type="submit"
+        />
+      </span>
+    </form>
+  </div>
+</DocumentFragment>
+`;

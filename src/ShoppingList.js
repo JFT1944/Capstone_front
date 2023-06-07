@@ -49,7 +49,7 @@ function handlePurchaseButton(e, x){
     return(
         <>
             <div className="ingredient_card_holder">
-            {typeof(pantry) === 'string' ? pantry : pantry.map((x) => <div id={x.id} className="ingredient_card">
+            {typeof(pantry) === 'string' ? pantry : pantry.map((x) => <div id={x.id} style={{border: 'black 3px solid', color:'black'}} className="ingredient_card">
                 <h3>{x.name}</h3>
                 <p>Available: {x.available_amount}{x.unit}</p>
                 <p>Total Available: {x.full_amount}{x.unit}</p>

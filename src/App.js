@@ -2,9 +2,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import DispensaHolder from './Dispensa_Holder';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
+  // hold user information
 const [user, setUser] = useState()
+// hold token information
 const [token, setToken] = useState()
 
 useEffect(() =>{
@@ -23,10 +26,15 @@ if(tStorage){
 
   return (
     <div className="App">
-     <DispensaHolder user={user} setUser={setUser} token={token} setToken={setToken}/>
+      <BrowserRouter>
+      <DispensaHolder user={user} setUser={setUser} token={token} setToken={setToken}/>
+      </BrowserRouter>
+     
     </div>
   );
 }
+
+
 
 
 

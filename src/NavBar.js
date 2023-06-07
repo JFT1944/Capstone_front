@@ -29,8 +29,9 @@ function handleMobileNav(e){
                 <span className="logo1">Dispensa<span className="logo2">.io</span></span>
             </div>
             <div className="NavBar_holder">
-                <NavLink className='navs' exact={true} to='/part-form'>Add Single Ingredient</NavLink>
+                <NavLink className='navs' exact={true} to='/part-form' data-testid='single'>Add Single Ingredient</NavLink>
                 <NavLink className='navs' exact={true} to='/full-form'>Add Recipe Ingredients</NavLink>
+                <NavLink className='navs' exact={true} to='/recipes'>Recipes</NavLink>
                 <NavLink className='navs' exact={true} to='/pantry'>Pantry</NavLink>
                 <NavLink className='navs' exact={true} to='/shopping-list'>Shopping List</NavLink>
                 <NavLink className='navs' exact={true} to='/' onClick={(e) => LogOutSequence(e)}>Log Out</NavLink>

@@ -6,6 +6,7 @@ import UpdatePanel from "./UpdatePanel";
 
 function Pantry(props){
 let {user} = props
+// loads the user data on mount
 let [pantry, setPantry] = useState('Loading...')
 let navigate = useNavigate()
 
